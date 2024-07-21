@@ -17,3 +17,4 @@
 * Grab and rename the downloaded files to include account details.
     * GSB/CUA serve up the CSV export files with the annoyingly generic filename of `<your_account_id>_<current_date>.csv`. This doesn't tell you what account the export came from.
     * Reliably finding the created file might be a challenge - filesystem event APIs? continuous polling of the directory? Ideally the filename could just be pulled out of Firefox itself - this would require the same kind of infrastructure as detailled above though.
+* Turn this into some kind of proper script that can be fed credentials in a secure manner so it can be called from `cron` or something like that, so I can stop ending up with gaps in my copies of my transaction history when I forget to run an export for more then 6 months.
