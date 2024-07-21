@@ -13,7 +13,7 @@
 ## TODO
 
 * Detect when the CSV export's download is complete and/or in-progress
-    * This will require some kind of wranging of the Firefox downloads UI. Might need Selenium 4+ to do this via the "context" thingo (`context = "chrome"), which can facilitate running scripts in the context of the Firefox UI ("chrome") itself. There also seems to be some kind of JS-level APIs for interacting with the Downloads stuff in Firefox - see https://searchfox.org/mozilla-central/source/toolkit/components/downloads/Downloads.sys.mjs
+    * This will require some kind of wranging of the Firefox downloads UI. Might need Selenium 4+ to do this via the "context" thingo (`context = "chrome" - see https://firefox-source-docs.mozilla.org/python/marionette_driver.html#marionette_driver.marionette.Marionette), which can facilitate running scripts in the context of the Firefox UI ("chrome") itself. There also seems to be some kind of JS-level APIs for interacting with the Downloads stuff in Firefox - see https://searchfox.org/mozilla-central/source/toolkit/components/downloads/Downloads.sys.mjs
 * Grab and rename the downloaded files to include account details.
     * GSB/CUA serve up the CSV export files with the annoyingly generic filename of `<your_account_id>_<current_date>.csv`. This doesn't tell you what account the export came from.
     * Reliably finding the created file might be a challenge - filesystem event APIs? continuous polling of the directory? Ideally the filename could just be pulled out of Firefox itself - this would require the same kind of infrastructure as detailled above though.
